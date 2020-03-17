@@ -1,0 +1,5 @@
+{
+  "name": "app-test-empty-db",
+  "description": "Midas api to import products",
+  "version": "2.4.0"
+}
