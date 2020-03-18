@@ -22,22 +22,29 @@ export class MongodbPatchApplier {
 	private readonly scriptsFolderBasePath: string;
 	private readonly logger: N9Log;
 	private readonly mongodb: { options: MongoClientOptions; uri: string };
-	private readonly appRootDirPath: string;
 	private readonly forcedToAppVersion: string;
 	private readonly lockTimeout: number;
+	private readonly appInfos: { version: string; name: string };
 
 	constructor(options: MongodbPatchApplierOptions) {
 		if (!options.migrationScriptsFolderPath) {
 			throw new N9Error('missing-migration-script-folder-path', 400);
 		}
 		this.scriptsFolderBasePath = path.normalize(options.migrationScriptsFolderPath);
+		this.appInfos = this.getToAppInfo(options.appRootDirPath ?? appRootDir.get());
 
+		options.logger = options.logger ?? global.log;
 		this.logger = options.logger
 			? options.logger.module('mongodb-patch-applier')
 			: new N9Log('mongodb-patch-applier', {
 					formatJSON:
 						process.env.NODE_ENV === 'development' ? /* istanbul ignore next */ false : undefined,
 			  });
+		// istanbul ignore next
+		if (!global.log) {
+			global.log = this.logger;
+		}
+
 		this.mongodb = {
 			uri: options.mongodbURI ?? process.env.MONGODB_URI,
 			options: options.mongodbOptions,
@@ -45,7 +52,6 @@ export class MongodbPatchApplier {
 		if (!this.mongodb.uri) {
 			throw new N9Error('missing-mongodb-uri', 400);
 		}
-		this.appRootDirPath = options.appRootDirPath ?? appRootDir.get();
 
 		this.lockTimeout = options.lockTimeoutMs ?? 10 * 60 * 1000; // 10 min
 
@@ -60,10 +66,9 @@ export class MongodbPatchApplier {
 		const appInfosRepository = new AppInfosRepository();
 		const currentAppVersion = await appInfosRepository.getCurrentDbVersion();
 
-		const toAppInfos = await this.getToAppInfo(this.appRootDirPath);
-		const toVersion = this.forcedToAppVersion ?? toAppInfos.version;
+		const toVersion = this.forcedToAppVersion ?? this.appInfos.version;
 		this.logger.info(
-			`Migrate ${toAppInfos.name} from version ${currentAppVersion} to version ${toVersion}`,
+			`Migrate ${this.appInfos.name} from version ${currentAppVersion} to version ${toVersion}`,
 		);
 		const migrator = new Migrator(db, this.logger, this.lockTimeout);
 		const startDate = Date.now();
@@ -71,7 +76,7 @@ export class MongodbPatchApplier {
 
 		const durationMs = Date.now() - startDate;
 		await appInfosRepository.saveResult(
-			toAppInfos.name,
+			this.appInfos.name,
 			currentAppVersion,
 			toVersion,
 			result,
@@ -86,14 +91,14 @@ export class MongodbPatchApplier {
 		}
 	}
 
-	private async getToAppInfo(appRootDirPath: string): Promise<{ version: string; name: string }> {
+	private getToAppInfo(appRootDirPath: string): { version: string; name: string } {
 		const packageJsonPath = path.join(appRootDirPath, 'package.json');
 
-		if (!(await FsExtra.pathExists(packageJsonPath))) {
+		if (!FsExtra.pathExistsSync(packageJsonPath)) {
 			throw new N9Error('package-json-not-found', 404, { packageJsonPath });
 		}
 
-		const file = await FsExtra.readJSON(packageJsonPath);
+		const file = FsExtra.readJSONSync(packageJsonPath);
 		return {
 			version: file.version,
 			name: file.name,

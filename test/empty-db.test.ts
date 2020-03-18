@@ -16,6 +16,7 @@ ava('Apply migration from V unknown to V2.4.0', async (t: ExecutionContext<TestC
 		migrationScriptsFolderPath: join(__dirname, './fixtures/from-empty-db'),
 		mongodbURI: t.context.mongodbURI,
 		appRootDirPath: join(__dirname, './fixtures/from-empty-db'),
+		logger: global.log,
 	});
 
 	await mongodbPatchApplier.apply();

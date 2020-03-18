@@ -5,8 +5,7 @@ import { join } from 'path';
 import { MongodbPatchApplier } from '../src';
 import { init, TestContext } from './helpers/utils';
 
-global.log = new N9Log('tests').module('params');
-init();
+init(true);
 
 ava('Missing params', async (t: ExecutionContext<TestContext>) => {
 	t.throws(
@@ -21,15 +20,22 @@ ava('Missing params', async (t: ExecutionContext<TestContext>) => {
 		'missing-mongodb-uri',
 	);
 
-	const mongodbPatchApplier = new MongodbPatchApplier({
-		logger: global.log,
-		migrationScriptsFolderPath: join(__dirname, './fixtures/from-empty-db'),
-		mongodbURI: t.context.mongodbURI,
-		appRootDirPath: join(__dirname, './fixtures/wrong-folder'),
-	});
-	await t.throwsAsync(
-		async () => await mongodbPatchApplier.apply(),
+	t.throws(
+		() =>
+			new MongodbPatchApplier({
+				migrationScriptsFolderPath: join(__dirname, './fixtures/from-empty-db'),
+				mongodbURI: t.context.mongodbURI,
+				appRootDirPath: join(__dirname, './fixtures/wrong-folder'),
+			}),
 		{ message: 'package-json-not-found' },
 		'package-json-not-found',
 	);
+
+	const m = new MongodbPatchApplier({
+		migrationScriptsFolderPath: join(__dirname, './fixtures/from-empty-db'),
+		mongodbURI: t.context.mongodbURI,
+		appRootDirPath: join(__dirname, './fixtures/from-empty-db'),
+	});
+
+	await t.notThrowsAsync(async () => await m.apply());
 });
