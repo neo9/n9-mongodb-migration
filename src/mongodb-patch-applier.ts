@@ -33,13 +33,14 @@ export class MongodbPatchApplier {
 		this.scriptsFolderBasePath = path.normalize(options.migrationScriptsFolderPath);
 		this.appInfos = this.getToAppInfo(options.appRootDirPath ?? appRootDir.get());
 
-		options.logger = options.logger ?? global.log;
-		this.logger = options.logger
-			? options.logger.module('mongodb-patch-applier')
-			: new N9Log('mongodb-patch-applier', {
-					formatJSON:
-						process.env.NODE_ENV === 'development' ? /* istanbul ignore next */ false : undefined,
-			  });
+		this.logger =
+			options.logger ??
+			global.log ??
+			new N9Log(this.appInfos.name, {
+				formatJSON:
+					process.env.NODE_ENV === 'development' ? /* istanbul ignore next */ false : undefined,
+			});
+		this.logger = this.logger.module('mongodb-patch-applier');
 		// istanbul ignore next
 		if (!global.log) {
 			global.log = this.logger;
