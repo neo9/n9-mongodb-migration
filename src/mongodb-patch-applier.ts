@@ -15,6 +15,7 @@ interface MongodbPatchApplierOptions {
 	mongodbOptions?: MongoClientOptions;
 	appRootDirPath?: string;
 	forcedToAppVersion?: string;
+	lockTimeoutMs?: number;
 }
 
 export class MongodbPatchApplier {
@@ -23,6 +24,7 @@ export class MongodbPatchApplier {
 	private readonly mongodb: { options: MongoClientOptions; uri: string };
 	private readonly appRootDirPath: string;
 	private readonly forcedToAppVersion: string;
+	private readonly lockTimeout: number;
 
 	constructor(options: MongodbPatchApplierOptions) {
 		if (!options.migrationScriptsFolderPath) {
@@ -33,7 +35,8 @@ export class MongodbPatchApplier {
 		this.logger = options.logger
 			? options.logger.module('mongodb-patch-applier')
 			: new N9Log('mongodb-patch-applier', {
-					formatJSON: process.env.NODE_ENV === 'development' ? false : undefined,
+					formatJSON:
+						process.env.NODE_ENV === 'development' ? /* istanbul ignore next */ false : undefined,
 			  });
 		this.mongodb = {
 			uri: options.mongodbURI ?? process.env.MONGODB_URI,
@@ -43,6 +46,8 @@ export class MongodbPatchApplier {
 			throw new N9Error('missing-mongodb-uri', 400);
 		}
 		this.appRootDirPath = options.appRootDirPath ?? appRootDir.get();
+
+		this.lockTimeout = options.lockTimeoutMs ?? 10 * 60 * 1000; // 10 min
 
 		if (options.forcedToAppVersion?.match('[0-9]+.[0-9]+.[0-9]+.*')) {
 			this.forcedToAppVersion = options.forcedToAppVersion;
@@ -60,7 +65,7 @@ export class MongodbPatchApplier {
 		this.logger.info(
 			`Migrate ${toAppInfos.name} from version ${currentAppVersion} to version ${toVersion}`,
 		);
-		const migrator = new Migrator(db, this.logger, appInfosRepository);
+		const migrator = new Migrator(db, this.logger, this.lockTimeout);
 		const startDate = Date.now();
 		const result = await migrator.migrate(currentAppVersion, toVersion, this.scriptsFolderBasePath);
 
