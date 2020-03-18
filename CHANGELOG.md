@@ -1,9 +1,22 @@
+## Version [0.0.4](http://scm.neo9.pro/catalogue/mongodb-patch-applier/compare/0.0.3...0.0.4) (2020-03-18)
+
+
+### logger
+
+* Add app name to logs ([774b057](http://scm.neo9.pro/catalogue/mongodb-patch-applier/commits/774b057)) (Benjamin Daniel)
+
+
+
 ## Version [0.0.3](http://scm.neo9.pro/catalogue/mongodb-patch-applier/compare/0.0.2...0.0.3) (2020-03-18)
 
 
 ### logger
 
 * Manage optional logger ([a6b33d4](http://scm.neo9.pro/catalogue/mongodb-patch-applier/commits/a6b33d4)) (Benjamin Daniel)
+
+### release
+
+* V 0.0.3 ([67ccae8](http://scm.neo9.pro/catalogue/mongodb-patch-applier/commits/67ccae8)) (Benjamin Daniel)
 
 
 
