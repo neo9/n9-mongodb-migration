@@ -1,6 +1,6 @@
 async function up(db, log) {
 	log.info(`Start migration script of 1s`);
-	await new Promise((resolve) => setTimeout(resolve, 1000));
+	await new Promise((resolve) => setTimeout(resolve, 2000));
 	log.info(`End migration script of 1s`);
 }
 
