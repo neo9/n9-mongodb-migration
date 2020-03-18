@@ -60,23 +60,23 @@ export class MongodbPatchApplier {
 		this.logger.info(
 			`Migrate ${toAppInfos.name} from version ${currentAppVersion} to version ${toVersion}`,
 		);
-		// const migrator = new MongoMigrations.Migrator(conf.mongo, MigratorWrapper.customLogFn) as Migrator;
 		const migrator = new Migrator(db, this.logger, appInfosRepository);
 		const startDate = Date.now();
 		const result = await migrator.migrate(currentAppVersion, toVersion, this.scriptsFolderBasePath);
 
+		const durationMs = Date.now() - startDate;
 		await appInfosRepository.saveResult(
 			toAppInfos.name,
 			currentAppVersion,
 			toVersion,
 			result,
-			Date.now() - startDate,
+			durationMs,
 		);
 
 		if (result.isSuccessful) {
-			this.logger.info('Migration OK !! Saving infos.');
+			this.logger.info(`Migration OK in ${durationMs / 1000} s !! Saving infos.`);
 		} else {
-			this.logger.warn(`Migration result : ${JSON.stringify(result)}`);
+			this.logger.warn(`Migration result (${durationMs} ms) : ${JSON.stringify(result)}`);
 			throw new N9Error('migration-failed', 500, { result });
 		}
 	}
