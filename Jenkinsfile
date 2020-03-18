@@ -5,5 +5,6 @@ NPMPipeline {
   nodeJSVersion = "NodeJS v12.14.1"
   packageManager = "yarn"
   gitlabConnection = "gitlab"
-  notifications = [email: 'catalogue@neo9.fr']
+  notifications = [email: 'catalogue@neo9.fr'],
+  tests = ["yarn run test"]
 }
