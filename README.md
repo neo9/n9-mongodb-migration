@@ -8,8 +8,8 @@ Project to run migration script on mongodb.
 import { MongodbPatchApplier } from 'mongodb-patch-applier';
 
 const mongodbPatchApplier = new MongodbPatchApplier({
-  migrationScriptsFolderPath: './scripts'),
-  mongodbURI: process.env.MONGODB_URI,
+	migrationScriptsFolderPath: './scripts',
+	mongodbURI: process.env.MONGODB_URI,
 });
 
 await mongodbPatchApplier.apply();

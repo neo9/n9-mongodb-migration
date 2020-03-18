@@ -7,7 +7,6 @@ import { MongoClientOptions } from 'mongodb';
 import * as path from 'path';
 import { AppInfosRepository } from './app-infos.repository';
 import { Migrator } from './migrator';
-import { MigrationResult } from './models/migration-result.models';
 
 interface MongodbPatchApplierOptions {
 	migrationScriptsFolderPath: string;
@@ -30,7 +29,7 @@ export class MongodbPatchApplier {
 			throw new N9Error('missing-migration-script-folder-path', 400);
 		}
 		this.scriptsFolderBasePath = path.normalize(options.migrationScriptsFolderPath);
-		// TODO: init logger (dev / no dev)
+
 		this.logger = options.logger
 			? options.logger.module('mongodb-patch-applier')
 			: new N9Log('mongodb-patch-applier', {
