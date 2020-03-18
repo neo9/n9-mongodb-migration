@@ -1,3 +1,12 @@
+## Version [0.0.3](http://scm.neo9.pro/catalogue/mongodb-patch-applier/compare/0.0.2...0.0.3) (2020-03-18)
+
+
+### logger
+
+* Manage optional logger ([a6b33d4](http://scm.neo9.pro/catalogue/mongodb-patch-applier/commits/a6b33d4)) (Benjamin Daniel)
+
+
+
 ## Version [0.0.2](http://scm.neo9.pro/catalogue/mongodb-patch-applier/compare/0.0.1...0.0.2) (2020-03-18)
 
 
@@ -5,6 +14,10 @@
 
 * Add tests to pipeline ([0726179](http://scm.neo9.pro/catalogue/mongodb-patch-applier/commits/0726179)) (Benjamin Daniel)
 * Fix file format ([4d78f8c](http://scm.neo9.pro/catalogue/mongodb-patch-applier/commits/4d78f8c)) (Benjamin Daniel)
+
+### release
+
+* V 0.0.2 ([4e02f62](http://scm.neo9.pro/catalogue/mongodb-patch-applier/commits/4e02f62)) (Benjamin Daniel)
 
 ### tests
 
