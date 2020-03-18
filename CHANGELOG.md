@@ -1,4 +1,22 @@
-## Version 0.0.1 (2020-03-18)
+## Version [0.0.2](http://scm.neo9.pro/catalogue/mongodb-patch-applier/compare/0.0.1...0.0.2) (2020-03-18)
+
+
+### jenkins
+
+* Add tests to pipeline ([0726179](http://scm.neo9.pro/catalogue/mongodb-patch-applier/commits/0726179)) (Benjamin Daniel)
+* Fix file format ([4d78f8c](http://scm.neo9.pro/catalogue/mongodb-patch-applier/commits/4d78f8c)) (Benjamin Daniel)
+
+### tests
+
+* Increase lock duration for Jenkins ([260057a](http://scm.neo9.pro/catalogue/mongodb-patch-applier/commits/260057a)) (Benjamin Daniel)
+
+### yarn
+
+* Remove lodash dependency ([8f58846](http://scm.neo9.pro/catalogue/mongodb-patch-applier/commits/8f58846)) (Benjamin Daniel)
+
+
+
+## Version [0.0.1](http://scm.neo9.pro/catalogue/mongodb-patch-applier/compare/e34dc3d...0.0.1) (2020-03-18)
 
 
 ### init
@@ -18,6 +36,10 @@
 ### logs
 
 * Add duration in logs CATW-671 ([52bd08a](http://scm.neo9.pro/catalogue/mongodb-patch-applier/commits/52bd08a)) (Benjamin Daniel)
+
+### release
+
+* V 0.0.1 ([42b0e6f](http://scm.neo9.pro/catalogue/mongodb-patch-applier/commits/42b0e6f)) (Benjamin Daniel)
 
 ### yarn
 
