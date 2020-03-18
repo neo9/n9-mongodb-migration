@@ -1,4 +1,4 @@
-library('pipeline@v7.11.0')
+library('pipeline@v9.4.0')
 
 NPMPipeline {
   npmConfigFileID = "nexus.npm"
