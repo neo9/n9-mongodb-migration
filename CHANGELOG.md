@@ -1,3 +1,14 @@
+## [0.0.5](http://scm.neo9.pro/catalogue/mongodb-patch-applier/compare/0.0.4...0.0.5) (2020-03-25)
+
+
+### release
+
+* Upgrade release command to avoid prompt ([edd2d7b](http://scm.neo9.pro/catalogue/mongodb-patch-applier/commits/edd2d7ba23b84c5f2ec30df81278042fa4fc2fe6))
+
+### yarn
+
+* Upgrade dependencies ([eb34941](http://scm.neo9.pro/catalogue/mongodb-patch-applier/commits/eb34941940134e22c70b136020e8705daddb30f3))
+
 ## Version [0.0.4](http://scm.neo9.pro/catalogue/mongodb-patch-applier/compare/0.0.3...0.0.4) (2020-03-18)
 
 
