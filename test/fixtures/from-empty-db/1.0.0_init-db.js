@@ -1,8 +1,5 @@
 async function up(db, log) {
-	const appInfos = await db
-		.collection('_appInfos')
-		.find()
-		.toArray();
+	const appInfos = await db.collection('_appInfos').find().toArray();
 
 	log.info('App infos historic : ' + JSON.stringify(appInfos));
 
