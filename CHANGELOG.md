@@ -1,3 +1,10 @@
+## [0.0.6](https://github.com/neo9/n9-mongodb-migration/compare/v0.0.5...v0.0.6) (2020-06-22)
+
+
+### git
+
+* Move project to github and npmjs ([a9ecdf2](https://github.com/neo9/n9-mongodb-migration/commit/a9ecdf2957999e3af0436b25b999c47820deb7d4))
+
 ## <small>0.0.5 (2020-03-25)</small>
 
 * release: Upgrade release command to avoid prompt ([edd2d7b](https://github.com/neo9/n9-mongodb-migration/commit/edd2d7b))
