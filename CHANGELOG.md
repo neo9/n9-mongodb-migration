@@ -1,3 +1,10 @@
+## [0.0.7](https://github.com/neo9/n9-mongodb-migration/compare/v0.0.6...v0.0.7) (2020-06-22)
+
+
+### yarn
+
+* Remove post install command ([cc22502](https://github.com/neo9/n9-mongodb-migration/commit/cc22502df0d7313fc18d35fbc375e3bb1b1a88af))
+
 ## [0.0.6](https://github.com/neo9/n9-mongodb-migration/compare/v0.0.5...v0.0.6) (2020-06-22)
 
 
