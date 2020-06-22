@@ -2,7 +2,7 @@ import { N9Log } from '@neo9/n9-node-log';
 import ava, { ExecutionContext } from 'ava';
 
 import { join } from 'path';
-import { MongodbPatchApplier } from '../src';
+import { N9MongodbMigration } from '../src';
 import { AppInfosEntity } from '../src/models/app-infos-entity.models';
 import { ScriptStatus } from '../src/models/migration-result.models';
 import { init, TestContext } from './helpers/utils';
@@ -12,7 +12,7 @@ global.log = new N9Log('tests').module('from-empty-db');
 init();
 
 ava('Apply migration from V unknown to V2.4.0', async (t: ExecutionContext<TestContext>) => {
-	const mongodbPatchApplier = new MongodbPatchApplier({
+	const mongodbPatchApplier = new N9MongodbMigration({
 		migrationScriptsFolderPath: join(__dirname, './fixtures/from-empty-db'),
 		mongodbURI: t.context.mongodbURI,
 		appRootDirPath: join(__dirname, './fixtures/from-empty-db'),

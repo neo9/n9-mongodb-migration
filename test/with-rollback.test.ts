@@ -3,7 +3,7 @@ import ava, { ExecutionContext } from 'ava';
 
 import { N9Error } from '@neo9/n9-node-utils';
 import { join } from 'path';
-import { MongodbPatchApplier } from '../src';
+import { N9MongodbMigration } from '../src';
 import { AppInfosEntity } from '../src/models/app-infos-entity.models';
 import { RollbackStatus, ScriptStatus } from '../src/models/migration-result.models';
 import { init, TestContext } from './helpers/utils';
@@ -15,7 +15,7 @@ init();
 ava(
 	'Apply migration from 0.0.0 to V2.0.0 with error in up',
 	async (t: ExecutionContext<TestContext>) => {
-		const mongodbPatchApplier = new MongodbPatchApplier({
+		const mongodbPatchApplier = new N9MongodbMigration({
 			migrationScriptsFolderPath: join(__dirname, './fixtures/with-rollback/ok'),
 			mongodbURI: t.context.mongodbURI,
 			forcedToAppVersion: '1.0.0',
@@ -58,7 +58,7 @@ ava(
 ava(
 	'Apply migration from 0.0.0 to V2.0.0 with errors in up and down',
 	async (t: ExecutionContext<TestContext>) => {
-		const mongodbPatchApplier = new MongodbPatchApplier({
+		const mongodbPatchApplier = new N9MongodbMigration({
 			migrationScriptsFolderPath: join(__dirname, './fixtures/with-rollback/ko'),
 			mongodbURI: t.context.mongodbURI,
 			forcedToAppVersion: '2.0.0',

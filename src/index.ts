@@ -1,2 +1,2 @@
-export * from './mongodb-patch-applier';
+export * from './n9-mongodb-migration';
 export * from './models';

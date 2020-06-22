@@ -2,7 +2,7 @@ import { N9Log } from '@neo9/n9-node-log';
 import ava, { ExecutionContext } from 'ava';
 
 import { join } from 'path';
-import { MongodbPatchApplier } from '../src';
+import { N9MongodbMigration } from '../src';
 import { AppInfosEntity } from '../src/models/app-infos-entity.models';
 import { ScriptStatus } from '../src/models/migration-result.models';
 import { init, TestContext } from './helpers/utils';
@@ -14,7 +14,7 @@ init();
 ava(
 	'Apply multiple migrations from 0.0.0 to 1.1.1 then to 2.1.0 then to 3.0.0',
 	async (t: ExecutionContext<TestContext>) => {
-		const mongodbPatchApplier = new MongodbPatchApplier({
+		const mongodbPatchApplier = new N9MongodbMigration({
 			migrationScriptsFolderPath: join(__dirname, './fixtures/many-migrations'),
 			mongodbURI: t.context.mongodbURI,
 			forcedToAppVersion: '1.1.1',
@@ -51,7 +51,7 @@ ava(
 		);
 		t.is(appInfo.result.scripts[0].status, ScriptStatus.OK, 'script status is OK');
 
-		const mongodbPatchApplier2 = new MongodbPatchApplier({
+		const mongodbPatchApplier2 = new N9MongodbMigration({
 			migrationScriptsFolderPath: join(__dirname, './fixtures/many-migrations'),
 			mongodbURI: t.context.mongodbURI,
 			forcedToAppVersion: '2.1.0',
@@ -105,7 +105,7 @@ ava(
 			'script (2.0.1_miragration-2-2) status is OK',
 		);
 
-		const mongodbPatchApplier3 = new MongodbPatchApplier({
+		const mongodbPatchApplier3 = new N9MongodbMigration({
 			migrationScriptsFolderPath: join(__dirname, './fixtures/many-migrations'),
 			mongodbURI: t.context.mongodbURI,
 			forcedToAppVersion: '3.0.0',

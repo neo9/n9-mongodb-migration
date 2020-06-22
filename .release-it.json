@@ -22,7 +22,7 @@
     "after:release": "npm run post:release"
   },
   "npm": {
-    "publish": false
+    "publish": true
   },
   "github": {
     "release": false

@@ -1,8 +1,8 @@
 {
-  "name": "mongodb-patch-applier",
+  "name": "@neo9/n9-mongodb-migration",
   "description": "Project to run migration script on mongodb",
   "version": "0.0.5",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
   "files": [
@@ -20,17 +20,17 @@
     "release:dry": "export BABEL_DISABLE_CACHE=1 && release-it --ci --dry-run=true",
     "build:changelog": "conventional-changelog -i CHANGELOG.md -s -p jscs -r 0",
     "post:release": "echo Successfully released $npm_package_version",
-    "postinstall": "(./bin/setup-git-hooks && yarn run build) || echo 'Not a git repository'",
+    "postinstall": "yarn run build",
+    "preversion": "yarn run test",
+    "prepublishOnly": "yarn run build",
     "test:dev": "export NODE_ENV=test && TS_NODE_FILES=true ava --verbose --color --serial --watch",
-    "test": "npm run lint && export NODE_ENV=test && TS_NODE_FILES=true nyc ava --verbose --color --serial && nyc report --reporter=html"
-  },
-  "publishConfig": {
-    "registry": "https://repo.neo9.pro/repository/npm-internal/"
+    "test": "yarn run lint && export NODE_ENV=test && TS_NODE_FILES=true nyc ava --verbose --color --serial && nyc report --reporter=html"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://scm.neo9.pro/catalogue/mongodb-patch-applier.git"
+    "url": "git+https://github.com/neo9/n9-mongodb-migration.git"
   },
+  "homepage": "https://github.com/neo9/n9-mongodb-migration#n9-mongodb-migration",
   "engines": {
     "node": ">=10.0.0"
   },
@@ -44,6 +44,7 @@
   },
   "devDependencies": {
     "@ava/typescript": "^1.1.1",
+    "@commitlint/cli": "^9.0.1",
     "@neo9/n9-coding-style": "^1.0.2",
     "@release-it/conventional-changelog": "^1.1.0",
     "@types/app-root-dir": "^0.1.0",
@@ -53,6 +54,7 @@
     "@types/semver": "^7.1.0",
     "ava": "^3.5.1",
     "conventional-changelog-cli": "^2.0.11",
+    "husky": "^4.2.5",
     "mongodb-memory-server": "^6.5.0",
     "nyc": "^15.0.0",
     "prettier": "2.0.2",
@@ -74,5 +76,12 @@
     "require": [
       "ts-node/register"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-commit": "yarn run format && yarn run lint",
+      "pre-push": "yarn run test"
+    }
   }
 }

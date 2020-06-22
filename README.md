@@ -1,13 +1,13 @@
-# Mongodb-patch-applier
+# n9-mongodb-migration
 
 Project to run migration script on mongodb.
 
 ## simple usage :
 
 ```typescript
-import { MongodbPatchApplier } from 'mongodb-patch-applier';
+import { N9MongodbMigration } from '@neo9/n9-mongodb-migration';
 
-const mongodbPatchApplier = new MongodbPatchApplier({
+const mongodbPatchApplier = new N9MongodbMigration({
 	migrationScriptsFolderPath: './scripts',
 	mongodbURI: process.env.MONGODB_URI,
 });
@@ -17,7 +17,7 @@ await mongodbPatchApplier.apply();
 
 ## Scripts names :
 
-x.y.z_dscription-of-the-upgrade.js
+`x.y.z_dscription-of-the-upgrade.js`
 
 ## Script example :
 

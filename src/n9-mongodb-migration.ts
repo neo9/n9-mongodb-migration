@@ -8,7 +8,7 @@ import * as path from 'path';
 import { AppInfosRepository } from './app-infos.repository';
 import { Migrator } from './migrator';
 
-interface MongodbPatchApplierOptions {
+interface N9MongodbMigrationOptions {
 	migrationScriptsFolderPath: string;
 	logger?: N9Log;
 	mongodbURI?: string;
@@ -18,7 +18,7 @@ interface MongodbPatchApplierOptions {
 	lockTimeoutMs?: number;
 }
 
-export class MongodbPatchApplier {
+export class N9MongodbMigration {
 	private readonly scriptsFolderBasePath: string;
 	private readonly logger: N9Log;
 	private readonly mongodb: { options: MongoClientOptions; uri: string };
@@ -26,7 +26,7 @@ export class MongodbPatchApplier {
 	private readonly lockTimeout: number;
 	private readonly appInfos: { version: string; name: string };
 
-	constructor(options: MongodbPatchApplierOptions) {
+	constructor(options: N9MongodbMigrationOptions) {
 		if (!options.migrationScriptsFolderPath) {
 			throw new N9Error('missing-migration-script-folder-path', 400);
 		}
@@ -40,7 +40,7 @@ export class MongodbPatchApplier {
 				formatJSON:
 					process.env.NODE_ENV === 'development' ? /* istanbul ignore next */ false : undefined,
 			});
-		this.logger = this.logger.module('mongodb-patch-applier');
+		this.logger = this.logger.module('n9-mongodb-migration');
 		// istanbul ignore next
 		if (!global.log) {
 			global.log = this.logger;

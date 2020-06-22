@@ -39,7 +39,7 @@ export class AppInfosRepository {
 				runDate: new Date(),
 				runDurationMs: durationMs,
 			},
-			'MONGODB-PATCH-APPLIER',
+			'N9-MONGODB-MIGRATION',
 		);
 	}
 }

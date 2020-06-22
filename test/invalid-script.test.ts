@@ -1,7 +1,7 @@
 import { N9Log } from '@neo9/n9-node-log';
 import ava, { ExecutionContext } from 'ava';
 import { join } from 'path';
-import { MongodbPatchApplier } from '../src';
+import { N9MongodbMigration } from '../src';
 import { AppInfosEntity } from '../src/models/app-infos-entity.models';
 import { init, TestContext } from './helpers/utils';
 
@@ -12,7 +12,7 @@ init();
 ava(
 	'Apply migration from 0.0.0 to V2.0.0 with error while loading script',
 	async (t: ExecutionContext<TestContext>) => {
-		const mongodbPatchApplier = new MongodbPatchApplier({
+		const mongodbPatchApplier = new N9MongodbMigration({
 			migrationScriptsFolderPath: join(__dirname, './fixtures/invalid-script'),
 			mongodbURI: t.context.mongodbURI,
 			forcedToAppVersion: '1.0.0',
