@@ -14,7 +14,7 @@ ava('Apply 2 migrations at the same time', async (t: ExecutionContext<TestContex
 	const mongodbPatchApplier = new N9MongodbMigration({
 		migrationScriptsFolderPath: join(__dirname, './fixtures/locks'),
 		mongodbURI: t.context.mongodbURI,
-		lockTimeoutMs: 5000, // 5s
+		lockTimeoutMs: 1000, // 1s (less than the migration duration)
 		forcedToAppVersion: '1.0.0',
 	});
 
