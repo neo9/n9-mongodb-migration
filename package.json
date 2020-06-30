@@ -23,7 +23,8 @@
     "preversion": "yarn run test",
     "prepublishOnly": "yarn run build",
     "test:dev": "export NODE_ENV=test && TS_NODE_FILES=true ava --verbose --color --serial --watch",
-    "test": "yarn run lint && export NODE_ENV=test && TS_NODE_FILES=true nyc ava --verbose --color --serial && nyc report --reporter=html"
+    "test": "yarn run lint && export NODE_ENV=test && TS_NODE_FILES=true nyc ava --verbose --color --serial && nyc report --reporter=html",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov -t '452db9b1-6d5b-40d2-befe-0406fde30805'"
   },
   "repository": {
     "type": "git",
@@ -52,6 +53,7 @@
     "@types/mongodb": "^3.5.3",
     "@types/semver": "^7.1.0",
     "ava": "^3.5.1",
+    "codecov": "^3.7.0",
     "conventional-changelog-cli": "^2.0.11",
     "husky": "^4.2.5",
     "mongodb-memory-server": "^6.5.0",
