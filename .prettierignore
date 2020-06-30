@@ -52,6 +52,7 @@ coverage
 # Sonar
 .scannerwork
 sonar-project.properties
+coverage.lcov
 
 #local conf
 *local.ts
