@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/neo9/n9-mongodb-migration#n9-mongodb-migration",
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=12.0.0"
   },
   "dependencies": {
     "@neo9/n9-mongo-client": "^0.13.2",
