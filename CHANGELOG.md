@@ -1,3 +1,25 @@
+# [0.1.0](https://github.com/neo9/n9-mongodb-migration/compare/v0.0.7...%s) (2020-09-23)
+
+
+### ci
+
+* Add travis and codecov ([236bd28](https://github.com/neo9/n9-mongodb-migration/commit/236bd287c96685a0f1e4ec1a0668d3731edd064c))
+* Fix dependencies and add badges to README ([84787ae](https://github.com/neo9/n9-mongodb-migration/commit/84787ae73efc7b5e8c5bbfb8e85ff567ee1a2bb4))
+* Fix nodejs version support drop node 10 ([7d704d9](https://github.com/neo9/n9-mongodb-migration/commit/7d704d93c7827885058120bedc5bddde079bbedc))
+
+### doc
+
+* Add example link to the readme ([9b2203c](https://github.com/neo9/n9-mongodb-migration/commit/9b2203c41e93193a744a5113005d11aa2c5fd11d))
+
+### test
+
+* Fix lock timeout in lock test ([077cb73](https://github.com/neo9/n9-mongodb-migration/commit/077cb735bd99cc8399a70783510937536ccbd7ea))
+
+### yarn
+
+* Upgrade all dependencies ([6c119ea](https://github.com/neo9/n9-mongodb-migration/commit/6c119eac31c25fd98ca9f4d9148859c38a7c533d))
+* Upgrade dependencies ([2c6f1a8](https://github.com/neo9/n9-mongodb-migration/commit/2c6f1a81bc0bc03da120bc8a696cd0d9071063d4))
+
 ## [0.0.7](https://github.com/neo9/n9-mongodb-migration/compare/v0.0.6...v0.0.7) (2020-06-22)
 
 
