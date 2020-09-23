@@ -40,5 +40,5 @@ async function down(db, log) {
 
 module.exports = { up, down };
 ```
-More examples can be found in the [tests folder](https://github.com/neo9/n9-mongodb-migration/tree/master/test/fixtures).
 
+More examples can be found in the [tests folder](https://github.com/neo9/n9-mongodb-migration/tree/master/test/fixtures).
