@@ -375,21 +375,21 @@
   resolved "https://registry.npmjs.org/@istanbuljs/schema/-/schema-0.1.2.tgz#26520bf09abe4a5644cd5414e37125a8954241dd"
   integrity sha512-tsAQNx32a8CoFhjhijUIhI4kccIAgmGhy8LZMZgGfmXcpMbPRUqn5LWmgRttILi6yeGmBJd2xsPkFMs0PzgPCw==
 
-"@neo9/n9-coding-style@^1.1.1":
-  version "1.1.1"
-  resolved "https://registry.npmjs.org/@neo9/n9-coding-style/-/n9-coding-style-1.1.1.tgz#cc841673d2155961a21c9746a9e8f218b5d08a77"
-  integrity sha512-haVOmCEXuTUTKWsGdphizx/9Uf/iG6r317MnFJj93g1BXBZ8wHya0SJpunqk/zJXiNUi53UV/ERHJ4DbjyUWrA==
+"@neo9/n9-coding-style@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@neo9/n9-coding-style/-/n9-coding-style-2.0.0.tgz#8eecf53681197a96d4bf1b6b9b031690c4d96caa"
+  integrity sha512-pL1VCk60Am9mIbj93K2L0A6s28BGA7588kw/hUQi6lqAjGZv/d18rMHg3Q/nC99RJZNRmOut7ntK9sSXpnKohQ==
   dependencies:
-    tslint-config-airbnb "^5.11.1"
+    tslint-config-airbnb "^5.11.2"
     tslint-eslint-rules "^5.4.0"
 
-"@neo9/n9-mongo-client@^0.15.1":
-  version "0.15.1"
-  resolved "https://registry.npmjs.org/@neo9/n9-mongo-client/-/n9-mongo-client-0.15.1.tgz#8c0da9ee94af2d8fe8a6aced618c991b7fa0acc3"
-  integrity sha512-Gcnts2sLFp8Sbu6bQe4uOL61enizeLIeB7Iz2BdlLRmq1uPO7qo3JafG1lLI1MnhNxlU/1K1C2hrPTyo1b4NXg==
+"@neo9/n9-mongo-client@^0.16.0":
+  version "0.16.0"
+  resolved "https://registry.yarnpkg.com/@neo9/n9-mongo-client/-/n9-mongo-client-0.16.0.tgz#94c500f579a648e89cb547a1de09484735a70683"
+  integrity sha512-AZOTjecqk35zubTbxPd0tvDFjNGJZtmo0g2aUtvbtfV8ooarW4dxsDsApzz2AspSoxvuv7RF3N7RL1ivgZfPlg==
   dependencies:
     "@neo9/n9-node-log" "^3.0.0"
-    "@neo9/n9-node-utils" "^1.10.0"
+    "@neo9/n9-node-utils" "^2.0.0"
     class-transformer "^0.2.0"
     deep-diff "^1.0.2"
     lodash "^4.17.20"
@@ -404,10 +404,10 @@
     "@types/winston" "^2.3.6"
     winston "^2.4.5"
 
-"@neo9/n9-node-utils@^1.10.0":
-  version "1.10.0"
-  resolved "https://registry.npmjs.org/@neo9/n9-node-utils/-/n9-node-utils-1.10.0.tgz#e61aa194ef49ca53d1a6c63a54c0a2195566379f"
-  integrity sha512-uTdW9I+DMtCzZGtmlr2prShOyD5lfnCIjKeOsvmI/fYNqrgpxhrj4Cqf5+0bSxKQOrV0mPguB9n+usYOjKDeyw==
+"@neo9/n9-node-utils@^2.0.0", "@neo9/n9-node-utils@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@neo9/n9-node-utils/-/n9-node-utils-2.0.1.tgz#aef10b7bd87872b3b0e0f6b65c12390f63973eee"
+  integrity sha512-ld92nfZCBq1G7YYzvjEgfKcZi39m0g9X0jF/72pgf6GXNSlkFMU9kY93RZBNR6pS4GKe7KfuM/TAw15rflF6Hw==
 
 "@nodelib/fs.scandir@2.1.3":
   version "2.1.3"
@@ -4663,9 +4663,9 @@ tslib@^1.13.0, tslib@^1.7.1, tslib@^1.8.1, tslib@^1.9.0:
   resolved "https://registry.npmjs.org/tslib/-/tslib-1.13.0.tgz#c881e13cc7015894ed914862d276436fa9a47043"
   integrity sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==
 
-tslint-config-airbnb@^5.11.1:
+tslint-config-airbnb@^5.11.2:
   version "5.11.2"
-  resolved "https://registry.npmjs.org/tslint-config-airbnb/-/tslint-config-airbnb-5.11.2.tgz#2f3d239fa3923be8e7a4372217a7ed552671528f"
+  resolved "https://registry.yarnpkg.com/tslint-config-airbnb/-/tslint-config-airbnb-5.11.2.tgz#2f3d239fa3923be8e7a4372217a7ed552671528f"
   integrity sha512-mUpHPTeeCFx8XARGG/kzYP4dPSOgoCqNiYbGHh09qTH8q+Y1ghsOgaeZKYYQT7IyxMos523z/QBaiv2zKNBcow==
   dependencies:
     tslint-consistent-codestyle "^1.14.1"

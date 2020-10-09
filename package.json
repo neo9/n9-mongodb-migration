@@ -35,9 +35,9 @@
     "node": ">=12.0.0"
   },
   "dependencies": {
-    "@neo9/n9-mongo-client": "^0.15.1",
+    "@neo9/n9-mongo-client": "^0.16.0",
     "@neo9/n9-node-log": "^3.0.0",
-    "@neo9/n9-node-utils": "^1.10.0",
+    "@neo9/n9-node-utils": "^2.0.1",
     "app-root-dir": "^1.0.2",
     "fs-extra": "^9.0.1",
     "semver": "^7.3.2"
@@ -45,7 +45,7 @@
   "devDependencies": {
     "@ava/typescript": "^1.1.1",
     "@commitlint/cli": "^11.0.0",
-    "@neo9/n9-coding-style": "^1.1.1",
+    "@neo9/n9-coding-style": "^2.0.0",
     "@release-it/conventional-changelog": "^2.0.0",
     "@types/app-root-dir": "^0.1.0",
     "@types/fs-extra": "^9.0.1",

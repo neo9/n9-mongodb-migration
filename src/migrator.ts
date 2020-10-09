@@ -31,13 +31,13 @@ export class Migrator {
 		if (!lock) {
 			throw new N9Error('lock-unavailable-to-migrate', 409);
 		}
-		this.logger.debug(`Got the lock to run migration`);
+		this.logger.info(`Got the lock to run migration`);
 		try {
 			const scriptsAvailable = await FsExtra.readdir(scriptsPath);
 
 			const scriptsToExecute = scriptsAvailable.filter((scriptName) => {
 				if (!scriptName.endsWith('.js')) {
-					this.logger.debug(`File ${scriptName} ignored because it's not JS`);
+					this.logger.warn(`File ${scriptName} ignored because it's not JS`);
 					return false;
 				}
 
@@ -86,7 +86,7 @@ export class Migrator {
 			for (const scriptToRun of scriptsToRun) {
 				const executingScriptResult = result.scripts.find((s) => s.id === scriptToRun.id);
 				try {
-					this.logger.debug(`Run up on script ${scriptToRun.id}`);
+					this.logger.info(`Run up on script ${scriptToRun.id}`);
 					await scriptToRun.up(this.db, this.logger.module(scriptToRun.id));
 					executingScriptResult.status = ScriptStatus.OK;
 				} catch (e) {
