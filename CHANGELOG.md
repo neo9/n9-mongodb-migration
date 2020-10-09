@@ -1,3 +1,18 @@
+## [0.1.1](https://github.com/neo9/n9-mongodb-migration/compare/%s...0.1.1) (2020-10-09)
+
+
+### release
+
+* Fix release tag in release-it ([05690f8](https://github.com/neo9/n9-mongodb-migration/commit/05690f8776d3d640cd79c266afcf14e2592d933e))
+
+### travis
+
+* Remove unsupported node version ([5df402b](https://github.com/neo9/n9-mongodb-migration/commit/5df402b6eaa0fd103492a77a25aacb834592ed53))
+
+### yarn
+
+* Upgrade neo9 dependencies ([77a4417](https://github.com/neo9/n9-mongodb-migration/commit/77a4417381399a059b51e997e7d16cc4c6b064e3))
+
 # [0.1.0](https://github.com/neo9/n9-mongodb-migration/compare/v0.0.7...%s) (2020-09-23)
 
 

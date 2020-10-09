@@ -1,7 +1,7 @@
 {
   "name": "@neo9/n9-mongodb-migration",
   "description": "Project to run migration script on mongodb",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
