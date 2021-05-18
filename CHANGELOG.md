@@ -1,3 +1,10 @@
+## [0.2.1](https://github.com/neo9/n9-mongodb-migration/compare/0.2.0...0.2.1) (2021-05-18)
+
+
+### yarn
+
+* Update dependencies ([a3211fa](https://github.com/neo9/n9-mongodb-migration/commit/a3211fa1b593f24be7080453d1d4a5aa565ac1dd))
+
 # [0.2.0](https://github.com/neo9/n9-mongodb-migration/compare/0.1.1...0.2.0) (2021-03-09)
 
 
