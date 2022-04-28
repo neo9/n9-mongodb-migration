@@ -1,7 +1,6 @@
-import { N9Log } from '@neo9/n9-node-log';
-import ava, { Assertions, ExecutionContext } from 'ava';
-
+import ava, { ExecutionContext } from 'ava';
 import { join } from 'path';
+
 import { N9MongodbMigration } from '../src';
 import { init, TestContext } from './helpers/utils';
 

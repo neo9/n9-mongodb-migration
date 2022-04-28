@@ -1,8 +1,8 @@
 import { N9Log } from '@neo9/n9-node-log';
-import ava, { ExecutionContext } from 'ava';
-
 import { N9Error } from '@neo9/n9-node-utils';
+import ava, { ExecutionContext } from 'ava';
 import { join } from 'path';
+
 import { N9MongodbMigration } from '../src';
 import { init, TestContext } from './helpers/utils';
 
@@ -20,7 +20,11 @@ ava('Apply 2 migrations at the same time', async (t: ExecutionContext<TestContex
 
 	mongodbPatchApplier.apply().catch(() => {
 		global.log('This should not happen');
+		t.fail(`The first migration should run well.`);
 	});
+
+	// eslint-disable-next-line no-promise-executor-return
+	await new Promise((resolve) => setTimeout(resolve, 100)); // let some time to the first apply to connect to mongodb
 	await t.throwsAsync(async () => await mongodbPatchApplier.apply(), {
 		message: 'lock-unavailable-to-migrate',
 		instanceOf: N9Error,

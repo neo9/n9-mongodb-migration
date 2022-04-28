@@ -1,6 +1,3 @@
-import { N9Log } from '@neo9/n9-node-log';
-import { Db } from 'mongodb';
-
 export enum ScriptStatus {
 	OK = 'ok',
 	KO = 'ko',

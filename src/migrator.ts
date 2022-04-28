@@ -2,9 +2,10 @@ import { N9MongoLock } from '@neo9/n9-mongo-client';
 import { N9Log } from '@neo9/n9-node-log';
 import { N9Error } from '@neo9/n9-node-utils';
 import * as FsExtra from 'fs-extra';
-import { Db } from 'mongodb';
+import type { Db } from 'mongodb';
 import * as Path from 'path';
 import * as Semver from 'semver';
+
 import { MigrationDefinition } from './models/migration-definition.models';
 import {
 	MigrationResult,
@@ -63,9 +64,10 @@ export class Migrator {
 			for (const scriptName of scriptsToExecute) {
 				const scriptFullPath = Path.join(scriptsPath, scriptName);
 				try {
+					// eslint-disable-next-line @typescript-eslint/no-var-requires,global-require,import/no-dynamic-require
 					const migrationDef: MigrationDefinition = require(scriptFullPath);
 					migrationDef.id = Path.parse(scriptName).name;
-					await scriptsToRun.push(migrationDef);
+					scriptsToRun.push(migrationDef);
 				} catch (error) {
 					this.logger.error(`Error while loading file ${scriptFullPath}`, { error });
 					this.logger.info(`No script executed.`);
@@ -119,8 +121,6 @@ export class Migrator {
 			}
 
 			return result;
-		} catch (e) {
-			throw e;
 		} finally {
 			await this.mongoLock.release(lock);
 		}

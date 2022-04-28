@@ -1,7 +1,7 @@
 import { N9Log } from '@neo9/n9-node-log';
 import ava, { ExecutionContext } from 'ava';
-
 import { join } from 'path';
+
 import { N9MongodbMigration } from '../src';
 import { AppInfosEntity } from '../src/models/app-infos-entity.models';
 import { ScriptStatus } from '../src/models/migration-result.models';
@@ -21,8 +21,9 @@ ava(
 		});
 
 		await mongodbPatchApplier.apply();
-		const foundDoc: { test: string }[] = await (
-			await t.context.db.collection('test').find(
+		const foundDoc: { test: string }[] = await t.context.db
+			.collection('test')
+			.find(
 				{},
 				{
 					projection: {
@@ -33,7 +34,7 @@ ava(
 					},
 				},
 			)
-		).toArray();
+			.toArray();
 		t.deepEqual(
 			foundDoc,
 			['1-1', '1-2', '1-3'].map((s) => ({ test: s })),
@@ -57,8 +58,9 @@ ava(
 			forcedToAppVersion: '2.1.0',
 		});
 		await mongodbPatchApplier2.apply();
-		const foundDocs2: { test: string }[] = await (
-			await t.context.db.collection('test').find(
+		const foundDocs2: { test: string }[] = await t.context.db
+			.collection('test')
+			.find(
 				{},
 				{
 					projection: {
@@ -69,16 +71,17 @@ ava(
 					},
 				},
 			)
-		).toArray();
+			.toArray();
 		t.deepEqual(
 			foundDocs2,
 			['2-1', '2-2'].map((s) => ({ test: s })),
 			'found doc right 2-1',
 		);
 
-		let appInfos: AppInfosEntity[] = await (
-			await t.context.db.collection('_appInfos').find({}, { sort: { _id: 1 } })
-		).toArray();
+		let appInfos: AppInfosEntity[] = await t.context.db
+			.collection('_appInfos')
+			.find({}, { sort: { _id: 1 } })
+			.toArray();
 		const appInfo2 = appInfos[appInfos.length - 1];
 		t.is(appInfo2.result.isSuccessful, true, 'Migration succeeded');
 		t.is(appInfo2.version, '2.1.0', 'App version in db is updated');
@@ -111,9 +114,10 @@ ava(
 			forcedToAppVersion: '3.0.0',
 		});
 		await mongodbPatchApplier3.apply();
-		appInfos = await (
-			await t.context.db.collection('_appInfos').find({}, { sort: { _id: 1 } })
-		).toArray();
+		appInfos = await t.context.db
+			.collection('_appInfos')
+			.find({}, { sort: { _id: 1 } })
+			.toArray();
 		const appInfo3 = appInfos[appInfos.length - 1];
 		t.is(appInfo3.result.isSuccessful, true, 'Migration succeeded');
 		t.is(appInfo3.version, '3.0.0', 'App version in db is updated');

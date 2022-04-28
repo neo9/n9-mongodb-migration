@@ -1,5 +1,5 @@
 import { N9Log } from '@neo9/n9-node-log';
-import { Db } from 'mongodb';
+import type { Db } from 'mongodb';
 
 export interface MigrationDefinition {
 	id: string;

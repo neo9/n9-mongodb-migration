@@ -3,8 +3,9 @@ import { N9Log } from '@neo9/n9-node-log';
 import { N9Error } from '@neo9/n9-node-utils';
 import * as appRootDir from 'app-root-dir';
 import * as FsExtra from 'fs-extra';
-import { MongoClientOptions } from 'mongodb';
+import type { MongoClientOptions } from 'mongodb';
 import * as path from 'path';
+
 import { AppInfosRepository } from './app-infos.repository';
 import { Migrator } from './migrator';
 

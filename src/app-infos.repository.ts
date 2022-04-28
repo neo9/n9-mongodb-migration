@@ -1,4 +1,5 @@
 import { MongoClient } from '@neo9/n9-mongo-client';
+
 import { AppInfosEntity } from './models/app-infos-entity.models';
 import { MigrationResult } from './models/migration-result.models';
 
@@ -14,9 +15,10 @@ export class AppInfosRepository {
 	}
 
 	public async getCurrentDbVersion(): Promise<string> {
-		const appInfos = await (
-			await this.mongoClient.find({ 'result.isSuccessful': true }, 0, 1, { _id: -1 })
-		).toArray();
+		const appInfos = await this.mongoClient
+			// eslint-disable-next-line @typescript-eslint/naming-convention
+			.find({ 'result.isSuccessful': true }, 0, 1, { _id: -1 })
+			.toArray();
 		if (!appInfos.length) {
 			return '0.0.0';
 		}

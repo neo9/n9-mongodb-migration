@@ -1,7 +1,7 @@
 import { N9Log } from '@neo9/n9-node-log';
 import ava, { ExecutionContext } from 'ava';
-
 import { join } from 'path';
+
 import { N9MongodbMigration } from '../src';
 import { AppInfosEntity } from '../src/models/app-infos-entity.models';
 import { ScriptStatus } from '../src/models/migration-result.models';
