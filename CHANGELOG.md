@@ -1,3 +1,17 @@
+
+
+# [0.3.0](https://github.com/neo9/n9-mongodb-migration/compare/0.2.1...0.3.0) (2022-04-28)
+
+
+### build
+
+* Use github-actions for build ([2bf94c2](https://github.com/neo9/n9-mongodb-migration/commit/2bf94c251d4461454bfaadf9321c7d3749991f2b))
+
+### yarn
+
+* Upgrade all indirect dependencies ([a5f1146](https://github.com/neo9/n9-mongodb-migration/commit/a5f1146bf0f5208645b15e79884601f384ca4ac8))
+* Upgrade dependencies including n9-node-log to v 4.0.0 ([f16aff8](https://github.com/neo9/n9-mongodb-migration/commit/f16aff8a9f9fdc6ad6611afeeeced2ed93cdde6f))
+
 ## [0.2.1](https://github.com/neo9/n9-mongodb-migration/compare/0.2.0...0.2.1) (2021-05-18)
 
 
@@ -106,6 +120,3 @@
 * logs: Add duration in logs CATW-671 ([52bd08a](https://github.com/neo9/n9-mongodb-migration/commit/52bd08a))
 * yarn: Fix entry point and export models CATW-671 ([89b9eb9](https://github.com/neo9/n9-mongodb-migration/commit/89b9eb9))
 * init: Initial commit CATW-671 ([e34dc3d](https://github.com/neo9/n9-mongodb-migration/commit/e34dc3d))
-
-
-
