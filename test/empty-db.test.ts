@@ -7,7 +7,7 @@ import { AppInfosEntity } from '../src/models/app-infos-entity.models';
 import { ScriptStatus } from '../src/models/migration-result.models';
 import { init, TestContext } from './helpers/utils';
 
-global.log = new N9Log('tests').module('from-empty-db');
+(global as any).log = new N9Log('tests').module('from-empty-db');
 
 init();
 

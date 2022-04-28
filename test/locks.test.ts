@@ -19,7 +19,7 @@ ava('Apply 2 migrations at the same time', async (t: ExecutionContext<TestContex
 	});
 
 	mongodbPatchApplier.apply().catch(() => {
-		global.log('This should not happen');
+		global.log.error('This should not happen');
 		t.fail(`The first migration should run well.`);
 	});
 

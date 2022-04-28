@@ -26,7 +26,7 @@ export function init(cleanLogger: boolean = false): void {
 
 	ava.afterEach(async () => {
 		global.log.info(`DROP DB after tests OK`);
-		await (global.db as Db).dropDatabase();
+		await global.db.dropDatabase();
 		await MongoUtils.disconnect();
 		await mongoMemoryServer.stop();
 	});
