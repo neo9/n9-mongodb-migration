@@ -1,5 +1,12 @@
 
 
+## [0.3.2](https://github.com/neo9/n9-mongodb-migration/compare/0.3.1...0.3.2) (2022-05-02)
+
+
+### yarn
+
+* Upgrade n9-mongo-client to force n9-node-log update ([0f466cd](https://github.com/neo9/n9-mongodb-migration/commit/0f466cd3c426c65e27335cf3466df53bcf612130))
+
 ## [0.3.1](https://github.com/neo9/n9-mongodb-migration/compare/0.3.0...0.3.1) (2022-05-02)
 
 
