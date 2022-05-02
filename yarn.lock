@@ -483,6 +483,14 @@
     pino "^7.11.0"
     pino-pretty "^7.6.1"
 
+"@neo9/n9-node-log@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.npmjs.org/@neo9/n9-node-log/-/n9-node-log-4.0.1.tgz#4d3c88095500ea900441af3269afe342c46b747b"
+  integrity sha512-lh60iFiXUobomdGNAQy6sqWZZYFy/IyAvueu/tTDOKdi2ZCDgDYNGQPeJkx70seuESkhB7kyMI2EElsJP+sS9w==
+  dependencies:
+    pino "^7.11.0"
+    pino-pretty "^7.6.1"
+
 "@neo9/n9-node-utils@^2.1.0":
   version "2.1.0"
   resolved "https://registry.npmjs.org/@neo9/n9-node-utils/-/n9-node-utils-2.1.0.tgz#869dbcfa627677633d98b3733db850582b179a96"
