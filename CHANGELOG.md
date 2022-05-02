@@ -1,5 +1,12 @@
 
 
+## [0.3.1](https://github.com/neo9/n9-mongodb-migration/compare/0.3.0...0.3.1) (2022-05-02)
+
+
+### yarn
+
+* Upgrade n9-node-log to v 4.0.1 to avoid wasm out of memory ([5b8afdb](https://github.com/neo9/n9-mongodb-migration/commit/5b8afdb9837679405f9697480832dc97657586a7))
+
 # [0.3.0](https://github.com/neo9/n9-mongodb-migration/compare/0.2.1...0.3.0) (2022-04-28)
 
 
