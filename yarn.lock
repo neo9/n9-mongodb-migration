@@ -4017,7 +4017,7 @@ new-github-release-url@1.0.0:
 
 next-tick@^1.0.0:
   version "1.1.0"
-  resolved "https://repo.neo9.pro/repository/npm-global/next-tick/-/next-tick-1.1.0.tgz#1836ee30ad56d67ef281b22bd199f709449b35eb"
+  resolved "https://registry.npmjs.org/next-tick/-/next-tick-1.1.0.tgz#1836ee30ad56d67ef281b22bd199f709449b35eb"
   integrity sha512-CXdUiJembsNjuToQvxayPZF9Vqht7hewsvy2sOWafLvi2awflj9mOC6bHIg50orX8IJvWKY9wYQ/zB2kogPslQ==
 
 node-fetch@^2.6.1, node-fetch@^2.6.7:
@@ -4248,7 +4248,7 @@ p-defer@^1.0.0:
 
 p-defer@^3.0.0:
   version "3.0.0"
-  resolved "https://repo.neo9.pro/repository/npm-global/p-defer/-/p-defer-3.0.0.tgz#d1dceb4ee9b2b604b1d94ffec83760175d4e6f83"
+  resolved "https://registry.npmjs.org/p-defer/-/p-defer-3.0.0.tgz#d1dceb4ee9b2b604b1d94ffec83760175d4e6f83"
   integrity sha512-ugZxsxmtTln604yeYd29EGrNhazN2lywetzpKhfmQjW/VJmhpDmWbiX+h0zL8V91R0UXkhb3KtPmyq9PZw3aYw==
 
 p-event@^5.0.1:
@@ -4620,14 +4620,14 @@ process-warning@^1.0.0:
 
 promise-batcher@^1.0.1:
   version "1.1.0"
-  resolved "https://repo.neo9.pro/repository/npm-global/promise-batcher/-/promise-batcher-1.1.0.tgz#99f74d8d8c58f925b2cfb169f1e774eaaa9f4d19"
+  resolved "https://registry.npmjs.org/promise-batcher/-/promise-batcher-1.1.0.tgz#99f74d8d8c58f925b2cfb169f1e774eaaa9f4d19"
   integrity sha512-Q/+G7i1ZqRCx56s9W1RRjhK6xveb2UkZz4Lt6xksO3SjcglDrRrQ4YRQ4WtalOFCzUNiAhstLLOX31QJRmr/BA==
   dependencies:
     p-defer "^3.0.0"
 
 promise-pool-executor@^1.1.1:
   version "1.1.1"
-  resolved "https://repo.neo9.pro/repository/npm-global/promise-pool-executor/-/promise-pool-executor-1.1.1.tgz#dd75137b253026599430c899faf98a96b46b99a8"
+  resolved "https://registry.npmjs.org/promise-pool-executor/-/promise-pool-executor-1.1.1.tgz#dd75137b253026599430c899faf98a96b46b99a8"
   integrity sha512-WZTGr7E8tiW93QoSRe0+arBIrJ13m7yKov/vyWqP8nkME/OjfzZgmSJjLtcDHd6VVz2LdSoAHZLmDfis8hJd1w==
   dependencies:
     debug "^3.1.0"
