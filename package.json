@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/neo9/n9-mongodb-migration#n9-mongodb-migration",
   "engines": {
-    "node": ">=12.0.0"
+    "node": ">=14.0.0"
   },
   "peerDependencies": {
     "class-transformer": "0.4.0"
@@ -42,30 +42,29 @@
     "@neo9/n9-node-log": "^4.1.0",
     "@neo9/n9-node-utils": "^2.2.1",
     "app-root-dir": "^1.0.2",
-    "fs-extra": "^10.1.0",
-    "semver": "^7.3.7"
+    "fs-extra": "^11.1.1",
+    "semver": "^7.5.1"
   },
   "devDependencies": {
     "@ava/typescript": "^3.0.1",
-    "@commitlint/cli": "^16.2.4",
+    "@commitlint/cli": "^17.6.5",
     "@neo9/n9-coding-style": "^4.0.0",
     "@release-it/conventional-changelog": "^5.1.1",
     "@types/app-root-dir": "^0.1.1",
-    "@types/fs-extra": "^9.0.13",
-    "@types/lodash": "^4.14.182",
+    "@types/fs-extra": "^11.0.1",
     "@types/mongodb": "^3.6.12",
-    "@types/semver": "^7.3.9",
+    "@types/semver": "^7.5.0",
     "ava": "^4.2.0",
     "class-transformer": "0.4.0",
     "codecov": "^3.8.3",
-    "conventional-changelog-cli": "^2.2.2",
+    "conventional-changelog-cli": "^3.0.0",
     "husky": "^4.3.0",
-    "mongodb-memory-server": "^8.5.1",
+    "mongodb-memory-server": "^8.13.0",
     "nyc": "^15.1.0",
-    "prettier": "2.6.2",
+    "prettier": "2.8.8",
     "release-it": "^15.11.0",
-    "ts-node": "^10.7.0",
-    "typescript": "^4.6.3"
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.3"
   },
   "ava": {
     "files": [
