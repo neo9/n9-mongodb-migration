@@ -13,7 +13,11 @@ export function init(cleanLogger: boolean = false): void {
 	let mongoMemoryServer: MongoMemoryServer;
 
 	ava.beforeEach(async (t: ExecutionContext<TestContext>) => {
-		mongoMemoryServer = await MongoMemoryServer.create();
+		mongoMemoryServer = await MongoMemoryServer.create({
+			binary: {
+				version: '6.0.5',
+			},
+		});
 		const uri = mongoMemoryServer.getUri();
 		global.log = new N9Log('tests');
 		const db = await MongoUtils.connect(uri);
