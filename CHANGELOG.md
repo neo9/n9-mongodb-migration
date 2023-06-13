@@ -1,5 +1,26 @@
 
 
+# [0.4.0](https://github.com/neo9/n9-mongodb-migration/compare/0.3.3...0.4.0) (2023-06-13)
+
+
+### mongo
+
+* Test on mongodb version 6.0.5 ([7ced04b](https://github.com/neo9/n9-mongodb-migration/commit/7ced04b64f2d15bea3ecdeea7a9b3cfad6ed752b))
+
+### node
+
+* Add tests on nodejs versions 18 and 20 ([ea3125d](https://github.com/neo9/n9-mongodb-migration/commit/ea3125dfe53569e39fb4290356227460d0e290aa))
+* Add tests on nodejs versions 18 and 20 and remove node 14 support ([6027c82](https://github.com/neo9/n9-mongodb-migration/commit/6027c82d75ba26be538ab780e3da6007ea5de402))
+
+### yarn
+
+* Fix registry url ([e882a0e](https://github.com/neo9/n9-mongodb-migration/commit/e882a0e5fb5c4f9f6f7920302d4a1e41c60b9a76))
+* Upgrade dependencies and tests on node 12 ([31b2b06](https://github.com/neo9/n9-mongodb-migration/commit/31b2b06dde6f41e709dc3ab6a3f82cb917ecdb4a))
+* Upgrade n9-mongo-client to version 0.31.0 ([706c0c9](https://github.com/neo9/n9-mongodb-migration/commit/706c0c9f768ea13e0e4104c10a6e7558784cb1ee))
+* Upgrade Neo9 dependencies ([88e808e](https://github.com/neo9/n9-mongodb-migration/commit/88e808e7f923c14341bb35a43459565ea84e5580))
+* Upgrade release-it version to v 15.11.0 ([55582b0](https://github.com/neo9/n9-mongodb-migration/commit/55582b0d3104472dfb8fdeb36fe312d72c6423df))
+* Upgrade semver-regex and json5 dependencies ([d1fc016](https://github.com/neo9/n9-mongodb-migration/commit/d1fc016d6f787eb0bf1df6813605ded8d59c86cc))
+
 ## [0.3.3](https://github.com/neo9/n9-mongodb-migration/compare/0.3.2...0.3.3) (2022-08-05)
 
 
