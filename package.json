@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/neo9/n9-mongodb-migration#n9-mongodb-migration",
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=16.0.0"
   },
   "peerDependencies": {
     "class-transformer": "0.4.0"
@@ -48,8 +48,9 @@
   "devDependencies": {
     "@ava/typescript": "^3.0.1",
     "@commitlint/cli": "^17.6.5",
-    "@neo9/n9-coding-style": "^4.0.0",
+    "@neo9/n9-coding-style": "^5.0.0",
     "@release-it/conventional-changelog": "^5.1.1",
+    "@tsconfig/node16": "^1.0.4",
     "@types/app-root-dir": "^0.1.1",
     "@types/fs-extra": "^11.0.1",
     "@types/mongodb": "^3.6.12",
