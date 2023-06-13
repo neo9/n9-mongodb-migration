@@ -1,17 +1,8 @@
 {
-  "dry-run": false,
-  "verbose": true,
-  "force": false,
-  "pkgFiles": ["package.json"],
-  "preReleaseId": null,
-  "increment": "patch",
-  "buildCommand": "npm run build",
-  "changelogCommand": "npm run build:changelog",
-  "safeBump": false,
-  "requireCleanWorkingDir": false,
   "git": {
     "commit": true,
     "commitMessage": "release: V ${version}",
+    "requireCleanWorkingDir": true,
     "tag": true,
     "tagName": "${version}",
     "tagAnnotation": "release: V ${version}",
@@ -27,31 +18,10 @@
   "github": {
     "release": false
   },
-  "dist": {
-    "repo": false
-  },
   "plugins": {
     "@release-it/conventional-changelog": {
       "preset": "eslint",
       "infile": "CHANGELOG.md"
-    }
-  },
-  "prompt": {
-    "src": {
-      "status": true,
-      "commit": true,
-      "tag": true,
-      "push": true,
-      "release": true,
-      "publish": true
-    },
-    "dist": {
-      "status": true,
-      "commit": true,
-      "tag": true,
-      "push": true,
-      "release": true,
-      "publish": true
     }
   }
 }
