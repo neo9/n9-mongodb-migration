@@ -462,12 +462,12 @@
     eslint-plugin-rxjs "^5.0.0"
     eslint-plugin-simple-import-sort "^7.0.0"
 
-"@neo9/n9-mongo-client@^0.30.0":
-  version "0.30.0"
-  resolved "https://registry.npmjs.org/@neo9/n9-mongo-client/-/n9-mongo-client-0.30.0.tgz#a8deacc6511c84164df4ba60a71838b1381be5ec"
-  integrity sha512-tunC5IDiRunZ+N08vBRoNKs9KnOQcY75UPmi8d2V15yHqiK4mgtRxBB6hUfDjvlGtUB7cFfrBSUWiVEoPzb6hg==
+"@neo9/n9-mongo-client@^0.31.0":
+  version "0.31.0"
+  resolved "https://registry.npmjs.org/@neo9/n9-mongo-client/-/n9-mongo-client-0.31.0.tgz#1138e1b3028ad7a0d266875d5e19afd62e9f6a1b"
+  integrity sha512-iiFWCXocoQT5wiOsASPSPRRJF4T2MkiKAgA+yLbOuRLeWWQqTup+ZVstLXefVQ/5IqXJWaX2wTYQ8abEwBUMrg==
   dependencies:
-    "@neo9/n9-node-log" "^4.0.1"
+    "@neo9/n9-node-log" "^4.1.0"
     "@neo9/n9-node-utils" "^2.1.0"
     deep-diff "^1.0.2"
     fast-deep-equal "^3.1.3"
@@ -480,6 +480,14 @@
   version "4.0.1"
   resolved "https://registry.npmjs.org/@neo9/n9-node-log/-/n9-node-log-4.0.1.tgz#4d3c88095500ea900441af3269afe342c46b747b"
   integrity sha512-lh60iFiXUobomdGNAQy6sqWZZYFy/IyAvueu/tTDOKdi2ZCDgDYNGQPeJkx70seuESkhB7kyMI2EElsJP+sS9w==
+  dependencies:
+    pino "^7.11.0"
+    pino-pretty "^7.6.1"
+
+"@neo9/n9-node-log@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.npmjs.org/@neo9/n9-node-log/-/n9-node-log-4.1.0.tgz#9392c2c3e08c04775b46a0546d42caf857287486"
+  integrity sha512-rmiHtSFnVElEZruaYBBbBtMNQ9zAeu1X6zIOuAsFIarQ1bG06lN8bxpZVLafhRINLZI8DEXzoEBBmT5CP11YLg==
   dependencies:
     pino "^7.11.0"
     pino-pretty "^7.6.1"
