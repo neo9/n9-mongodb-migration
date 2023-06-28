@@ -1240,10 +1240,10 @@
     eslint-plugin-rxjs "^5.0.3"
     eslint-plugin-simple-import-sort "^10.0.0"
 
-"@neo9/n9-mongo-client@^0.31.0":
-  version "0.31.0"
-  resolved "https://registry.npmjs.org/@neo9/n9-mongo-client/-/n9-mongo-client-0.31.0.tgz#1138e1b3028ad7a0d266875d5e19afd62e9f6a1b"
-  integrity sha512-iiFWCXocoQT5wiOsASPSPRRJF4T2MkiKAgA+yLbOuRLeWWQqTup+ZVstLXefVQ/5IqXJWaX2wTYQ8abEwBUMrg==
+"@neo9/n9-mongo-client@^0.32.0":
+  version "0.32.0"
+  resolved "https://registry.npmjs.org/@neo9/n9-mongo-client/-/n9-mongo-client-0.32.0.tgz#45df2e3fab5d5687682e9aaff13983c6fcea5622"
+  integrity sha512-v1WI2iZHgu+EAbzugxXZ18Of0RCBAhuknNM5F8x0zGkD/KJT4KheVgS6NG0iiXC6fYlE6Kk9U8hQlYXzUAXT7A==
   dependencies:
     "@neo9/n9-node-log" "^4.1.0"
     "@neo9/n9-node-utils" "^2.1.0"
