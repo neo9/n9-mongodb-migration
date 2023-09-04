@@ -15,7 +15,7 @@ export function init(cleanLogger: boolean = false): void {
 	ava.beforeEach(async (t: ExecutionContext<TestContext>) => {
 		mongoMemoryServer = await MongoMemoryServer.create({
 			binary: {
-				version: '6.0.5',
+				version: '6.0.9',
 			},
 		});
 		const uri = mongoMemoryServer.getUri();

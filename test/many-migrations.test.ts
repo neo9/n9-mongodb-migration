@@ -21,8 +21,8 @@ ava(
 		});
 
 		await mongodbPatchApplier.apply();
-		const foundDoc: { test: string }[] = await t.context.db
-			.collection('test')
+		const foundDoc = await t.context.db
+			.collection<{ test: string }>('test')
 			.find(
 				{},
 				{
@@ -40,7 +40,7 @@ ava(
 			['1-1', '1-2', '1-3'].map((s) => ({ test: s })),
 			'found doc right 1-3',
 		);
-		const appInfo: AppInfosEntity = await t.context.db.collection('_appInfos').findOne({});
+		const appInfo = await t.context.db.collection<AppInfosEntity>('_appInfos').findOne({});
 		t.is(appInfo.result.isSuccessful, true, 'Migration succeeded');
 		t.is(appInfo.version, '1.1.1', 'App version in db is updated');
 		t.is(appInfo.previousVersion, '0.0.0', 'Unknown version is set to 0.0.0');
@@ -58,8 +58,8 @@ ava(
 			forcedToAppVersion: '2.1.0',
 		});
 		await mongodbPatchApplier2.apply();
-		const foundDocs2: { test: string }[] = await t.context.db
-			.collection('test')
+		const foundDocs2 = await t.context.db
+			.collection<{ test: string }>('test')
 			.find(
 				{},
 				{
@@ -78,8 +78,8 @@ ava(
 			'found doc right 2-1',
 		);
 
-		let appInfos: AppInfosEntity[] = await t.context.db
-			.collection('_appInfos')
+		let appInfos = await t.context.db
+			.collection<AppInfosEntity>('_appInfos')
 			.find({}, { sort: { _id: 1 } })
 			.toArray();
 		const appInfo2 = appInfos[appInfos.length - 1];
@@ -115,7 +115,7 @@ ava(
 		});
 		await mongodbPatchApplier3.apply();
 		appInfos = await t.context.db
-			.collection('_appInfos')
+			.collection<AppInfosEntity>('_appInfos')
 			.find({}, { sort: { _id: 1 } })
 			.toArray();
 		const appInfo3 = appInfos[appInfos.length - 1];

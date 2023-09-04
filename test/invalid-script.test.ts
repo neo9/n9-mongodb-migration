@@ -22,7 +22,7 @@ ava(
 		await t.throwsAsync(async () => await mongodbPatchApplier.apply(), {
 			message: 'Cannot use import statement outside a module',
 		});
-		const appInfos: AppInfosEntity = await t.context.db.collection('_appInfos').findOne({});
+		const appInfos = await t.context.db.collection<AppInfosEntity>('_appInfos').findOne({});
 		t.falsy(appInfos, 'Migration failed');
 	},
 );
