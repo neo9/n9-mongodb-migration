@@ -26,7 +26,7 @@ ava(
 			instanceOf: N9Error,
 		});
 		const foundInitialDoc: { test: boolean } = await t.context.db
-			.collection('test-rollback')
+			.collection<{ test: boolean }>('test-rollback')
 			.findOne(
 				{},
 				{
@@ -36,7 +36,9 @@ ava(
 				},
 			);
 		t.deepEqual(foundInitialDoc, { test: true }, 'found initial doc right');
-		const appInfos: AppInfosEntity = await t.context.db.collection('_appInfos').findOne({});
+		const appInfos: AppInfosEntity = await t.context.db
+			.collection<AppInfosEntity>('_appInfos')
+			.findOne({});
 		t.is(appInfos.result.isSuccessful, false, 'Migration failed');
 		t.is(
 			appInfos.version,
@@ -66,13 +68,15 @@ ava(
 
 		await t.throwsAsync(async () => await mongodbPatchApplier.apply());
 		const notFoundInitialDoc: { test: boolean } = await t.context.db
-			.collection('test-rollback')
+			.collection<{ test: boolean }>('test-rollback')
 			.findOne({});
 		t.falsy(
 			notFoundInitialDoc,
 			'doc created by upgrade to V 2.0.0 not found due to 1.0.0 upgrade failed',
 		);
-		const appInfos: AppInfosEntity = await t.context.db.collection('_appInfos').findOne({});
+		const appInfos: AppInfosEntity = await t.context.db
+			.collection<AppInfosEntity>('_appInfos')
+			.findOne({});
 		t.is(appInfos.result.isSuccessful, false, 'Migration failed');
 		t.is(
 			appInfos.version,

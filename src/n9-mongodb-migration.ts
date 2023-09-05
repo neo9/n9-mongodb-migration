@@ -1,4 +1,4 @@
-import { MongoUtils } from '@neo9/n9-mongo-client';
+import { MongoUtils } from '@neo9/n9-mongodb-client';
 import { N9Log } from '@neo9/n9-node-log';
 import { N9Error } from '@neo9/n9-node-utils';
 import * as appRootDir from 'app-root-dir';

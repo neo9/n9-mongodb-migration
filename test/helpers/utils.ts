@@ -1,4 +1,4 @@
-import { MongoUtils } from '@neo9/n9-mongo-client';
+import { MongoUtils } from '@neo9/n9-mongodb-client';
 import { N9Log } from '@neo9/n9-node-log';
 import ava, { ExecutionContext } from 'ava';
 import type { Db } from 'mongodb';
@@ -15,7 +15,7 @@ export function init(cleanLogger: boolean = false): void {
 	ava.beforeEach(async (t: ExecutionContext<TestContext>) => {
 		mongoMemoryServer = await MongoMemoryServer.create({
 			binary: {
-				version: '6.0.5',
+				version: '6.0.9',
 			},
 		});
 		const uri = mongoMemoryServer.getUri();

@@ -1,8 +1,8 @@
-import { N9MongoLock } from '@neo9/n9-mongo-client';
+import { N9MongoLock } from '@neo9/n9-mongodb-client';
+import { Db } from '@neo9/n9-mongodb-client/mongodb';
 import { N9Log } from '@neo9/n9-node-log';
 import { N9Error } from '@neo9/n9-node-utils';
 import * as FsExtra from 'fs-extra';
-import type { Db } from 'mongodb';
 import * as Path from 'path';
 import * as Semver from 'semver';
 
@@ -16,7 +16,11 @@ import {
 
 export class Migrator {
 	private mongoLock: N9MongoLock;
-	constructor(private readonly db: Db, private readonly logger: N9Log, lockTimeout: number) {
+	constructor(
+		private readonly db: Db,
+		private readonly logger: N9Log,
+		lockTimeout: number,
+	) {
 		this.mongoLock = new N9MongoLock('_migrationLocks', 'execute-lock', {
 			timeout: lockTimeout,
 		});

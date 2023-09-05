@@ -20,16 +20,18 @@ ava('Apply migration from V unknown to V2.4.0', async (t: ExecutionContext<TestC
 	});
 
 	await mongodbPatchApplier.apply();
-	const foundInitialDoc: { test: boolean } = await t.context.db.collection('test-init-db').findOne(
-		{},
-		{
-			projection: {
-				_id: 0,
+	const foundInitialDoc: { test: boolean } = await t.context.db
+		.collection<{ test: boolean }>('test-init-db')
+		.findOne(
+			{},
+			{
+				projection: {
+					_id: 0,
+				},
 			},
-		},
-	);
+		);
 	t.deepEqual(foundInitialDoc, { test: true }, 'found initial doc right');
-	const appInfos: AppInfosEntity = await t.context.db.collection('_appInfos').findOne({});
+	const appInfos = await t.context.db.collection<AppInfosEntity>('_appInfos').findOne({});
 	t.is(appInfos.version, '2.4.0', 'App version in db is updated');
 	t.is(appInfos.result.scripts.length, 1, '1 script executed');
 	t.is(appInfos.result.isSuccessful, true, 'Migration successful');
