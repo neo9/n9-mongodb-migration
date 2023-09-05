@@ -1,5 +1,5 @@
-import { N9MongoLock } from '@neo9/n9-mongo-client';
-import { Db } from '@neo9/n9-mongo-client/mongodb';
+import { N9MongoLock } from '@neo9/n9-mongodb-client';
+import { Db } from '@neo9/n9-mongodb-client/mongodb';
 import { N9Log } from '@neo9/n9-node-log';
 import { N9Error } from '@neo9/n9-node-utils';
 import * as FsExtra from 'fs-extra';

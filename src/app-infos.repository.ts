@@ -1,4 +1,4 @@
-import { MongoClient } from '@neo9/n9-mongo-client';
+import { MongoClient } from '@neo9/n9-mongodb-client';
 
 import { AppInfosEntity } from './models/app-infos-entity.models';
 import { MigrationResult } from './models/migration-result.models';
