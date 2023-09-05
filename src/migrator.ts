@@ -1,5 +1,5 @@
-import type { MongoDB } from '@neo9/n9-mongo-client';
 import { N9MongoLock } from '@neo9/n9-mongo-client';
+import { Db } from '@neo9/n9-mongo-client/mongodb';
 import { N9Log } from '@neo9/n9-node-log';
 import { N9Error } from '@neo9/n9-node-utils';
 import * as FsExtra from 'fs-extra';
@@ -17,7 +17,7 @@ import {
 export class Migrator {
 	private mongoLock: N9MongoLock;
 	constructor(
-		private readonly db: MongoDB.Db,
+		private readonly db: Db,
 		private readonly logger: N9Log,
 		lockTimeout: number,
 	) {

@@ -1,4 +1,4 @@
-import { BaseMongoObject } from '@neo9/n9-mongo-client/dist/src/models';
+import { BaseMongoObject } from '@neo9/n9-mongo-client';
 
 import { MigrationResult } from './migration-result.models';
 

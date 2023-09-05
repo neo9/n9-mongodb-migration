@@ -38,7 +38,7 @@
     "class-transformer": "0.4.0"
   },
   "dependencies": {
-    "@neo9/n9-mongo-client": "^1.0.0-rc.0",
+    "@neo9/n9-mongo-client": "^1.0.0-rc.1",
     "@neo9/n9-node-log": "^4.1.0",
     "@neo9/n9-node-utils": "^2.2.1",
     "app-root-dir": "^1.0.2",
