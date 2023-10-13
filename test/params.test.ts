@@ -4,7 +4,7 @@ import { join } from 'path';
 import { N9MongodbMigration } from '../src';
 import { init, TestContext } from './helpers/utils';
 
-init(true);
+init('params');
 
 ava('Missing params', async (t: ExecutionContext<TestContext>) => {
 	t.throws(
@@ -14,7 +14,7 @@ ava('Missing params', async (t: ExecutionContext<TestContext>) => {
 	);
 
 	t.throws(
-		() => new N9MongodbMigration({ migrationScriptsFolderPath: 'test' }),
+		() => new N9MongodbMigration({ migrationScriptsFolderPath: 'test', logger: t.context.logger }),
 		{ message: 'missing-mongodb-uri' },
 		'missing-mongodb-uri',
 	);
@@ -23,6 +23,7 @@ ava('Missing params', async (t: ExecutionContext<TestContext>) => {
 		() =>
 			new N9MongodbMigration({
 				migrationScriptsFolderPath: join(__dirname, './fixtures/from-empty-db'),
+				logger: t.context.logger,
 				mongodbURI: t.context.mongodbURI,
 				appRootDirPath: join(__dirname, './fixtures/wrong-folder'),
 			}),
@@ -32,6 +33,7 @@ ava('Missing params', async (t: ExecutionContext<TestContext>) => {
 
 	const m = new N9MongodbMigration({
 		migrationScriptsFolderPath: join(__dirname, './fixtures/from-empty-db'),
+		logger: t.context.logger,
 		mongodbURI: t.context.mongodbURI,
 		appRootDirPath: join(__dirname, './fixtures/from-empty-db'),
 	});

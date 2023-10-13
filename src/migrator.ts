@@ -1,9 +1,10 @@
+import * as fs from 'node:fs/promises';
+import * as Path from 'node:path';
+
 import { N9MongoLock } from '@neo9/n9-mongodb-client';
 import { Db } from '@neo9/n9-mongodb-client/mongodb';
 import { N9Log } from '@neo9/n9-node-log';
 import { N9Error } from '@neo9/n9-node-utils';
-import * as FsExtra from 'fs-extra';
-import * as Path from 'path';
 import * as Semver from 'semver';
 
 import { MigrationDefinition } from './models/migration-definition.models';
@@ -21,7 +22,7 @@ export class Migrator {
 		private readonly logger: N9Log,
 		lockTimeout: number,
 	) {
-		this.mongoLock = new N9MongoLock('_migrationLocks', 'execute-lock', {
+		this.mongoLock = new N9MongoLock(db, '_migrationLocks', 'execute-lock', {
 			timeout: lockTimeout,
 		});
 	}
@@ -38,7 +39,7 @@ export class Migrator {
 		}
 		this.logger.info(`Got the lock to run migration`);
 		try {
-			const scriptsAvailable = await FsExtra.readdir(scriptsPath);
+			const scriptsAvailable = await fs.readdir(scriptsPath);
 
 			const scriptsToExecute = scriptsAvailable.filter((scriptName) => {
 				if (!scriptName.endsWith('.js')) {

@@ -9,10 +9,6 @@ node_modules
 # Build directory
 dist
 
-#UML
-uml.png
-uml.svg
-
 # Editor's config directories
 .vscode
 .idea
@@ -28,11 +24,6 @@ uml.svg
 coverage
 .nyc_output
 
-# DEV Scripts
-/scripts/dev/local.sh
-/scripts/dev/lib/*
-/scripts/dev/output/*
-
 # Windows related files
 Thumbs.db
 ehthumbs.db
@@ -41,6 +32,8 @@ $RECYCLE.BIN/
 
 # Optional npm cache directory
 .npm
+# Optional nvm version file
+.nvmrc
 
 # Sonar
 .scannerwork

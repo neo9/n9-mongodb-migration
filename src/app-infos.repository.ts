@@ -1,16 +1,22 @@
-import { MongoClient } from '@neo9/n9-mongodb-client';
+import { N9MongoDBClient } from '@neo9/n9-mongodb-client';
+import { Db } from '@neo9/n9-mongodb-client/mongodb';
+import { N9Log } from '@neo9/n9-node-log';
 
 import { AppInfosEntity } from './models/app-infos-entity.models';
 import { MigrationResult } from './models/migration-result.models';
 
 export class AppInfosRepository {
-	private readonly mongoClient: MongoClient<AppInfosEntity, AppInfosEntity>;
+	private readonly mongoClient: N9MongoDBClient<AppInfosEntity, AppInfosEntity>;
 
-	constructor() {
-		this.mongoClient = new MongoClient<AppInfosEntity, AppInfosEntity>(
+	constructor(db: Db, logger: N9Log) {
+		this.mongoClient = new N9MongoDBClient<AppInfosEntity, AppInfosEntity>(
 			'_appInfos',
 			AppInfosEntity,
 			AppInfosEntity,
+			{
+				db,
+				logger,
+			},
 		);
 	}
 

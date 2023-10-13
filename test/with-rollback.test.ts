@@ -1,22 +1,18 @@
-import { N9Log } from '@neo9/n9-node-log';
 import { N9Error } from '@neo9/n9-node-utils';
 import ava, { ExecutionContext } from 'ava';
 import { join } from 'path';
 
-import { N9MongodbMigration } from '../src';
-import { AppInfosEntity } from '../src/models/app-infos-entity.models';
-import { RollbackStatus, ScriptStatus } from '../src/models/migration-result.models';
+import { AppInfosEntity, N9MongodbMigration, RollbackStatus, ScriptStatus } from '../src';
 import { init, TestContext } from './helpers/utils';
 
-global.log = new N9Log('tests').module('issues');
-
-init();
+init('with-rollback');
 
 ava(
 	'Apply migration from 0.0.0 to V2.0.0 with error in up',
 	async (t: ExecutionContext<TestContext>) => {
 		const mongodbPatchApplier = new N9MongodbMigration({
 			migrationScriptsFolderPath: join(__dirname, './fixtures/with-rollback/ok'),
+			logger: t.context.logger,
 			mongodbURI: t.context.mongodbURI,
 			forcedToAppVersion: '1.0.0',
 		});
@@ -62,6 +58,7 @@ ava(
 	async (t: ExecutionContext<TestContext>) => {
 		const mongodbPatchApplier = new N9MongodbMigration({
 			migrationScriptsFolderPath: join(__dirname, './fixtures/with-rollback/ko'),
+			logger: t.context.logger,
 			mongodbURI: t.context.mongodbURI,
 			forcedToAppVersion: '2.0.0',
 		});

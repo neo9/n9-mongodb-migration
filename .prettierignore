@@ -6,6 +6,8 @@
 .mailmap
 Dockerfile
 Jenkinsfile
+.editorconfig
+
 # scripts
 *.sh
 
@@ -47,12 +49,9 @@ $RECYCLE.BIN/
 
 # Coverage
 coverage
+coverage.lcov
 .nyc_output
 
 # Sonar
 .scannerwork
 sonar-project.properties
-coverage.lcov
-
-#local conf
-*local.ts
