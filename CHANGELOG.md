@@ -1,5 +1,12 @@
 
 
+# [1.0.0-rc.1](https://github.com/neo9/n9-mongodb-migration/compare/1.0.0-rc.0...1.0.0-rc.1) (2023-10-13)
+
+
+### yarn
+
+* Upgrade dependencies and remove fs-extra and codecov ([7a11513](https://github.com/neo9/n9-mongodb-migration/commit/7a11513f77770f70dbed3ca9a32d1d8d9c2c8fb0))
+
 # [1.0.0-rc.0](https://github.com/neo9/n9-mongodb-migration/compare/0.4.2...1.0.0-rc.0) (2023-09-05)
 
 
