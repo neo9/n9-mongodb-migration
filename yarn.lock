@@ -520,21 +520,21 @@
     eslint-plugin-rxjs "^5.0.3"
     eslint-plugin-simple-import-sort "^10.0.0"
 
-"@neo9/n9-mongodb-client@^1.0.0-rc.10":
-  version "1.0.0-rc.10"
-  resolved "https://registry.npmjs.org/@neo9/n9-mongodb-client/-/n9-mongodb-client-1.0.0-rc.10.tgz#02423a6f4b0266cc8f905677a0c7480bcc6ba0f4"
-  integrity sha512-6ePLtXCaAoBPZN6PLqoBKa0awrOEh8a88BlSIjgvb9a6K4DC4nV/Btc8lW2rlZ1p33G40M9VhwCWvQTN7GcXaA==
+"@neo9/n9-mongodb-client@^1.0.0-rc.13":
+  version "1.0.0-rc.13"
+  resolved "https://registry.npmjs.org/@neo9/n9-mongodb-client/-/n9-mongodb-client-1.0.0-rc.13.tgz#c1d634de8ba9901dd979c2e85e3c45940a39fcaf"
+  integrity sha512-t/PnKOsfDSMApU7huaFb34aSrjS1LgpSUSz3EAAcw/eZVkHoB9Vchi0U9RwKltirzRWoHRYv+VzAb6TzzY4o1Q==
   dependencies:
-    "@neo9/n9-node-log" "^5.0.0-rc.5"
-    "@neo9/n9-node-utils" "^2.2.1"
+    "@neo9/n9-node-log" "^5.0.0-rc.6"
+    "@neo9/n9-node-utils" "^3.0.0-rc.0"
     deep-diff "^1.0.2"
     fast-deep-equal "^3.1.3"
     lodash "^4.17.21"
-    mingo-fork-no-hash "^3.1.1"
+    mingo "^6.4.7"
     mongodb "~6.1.0"
     promise-pool-executor "^1.1.1"
 
-"@neo9/n9-node-log@^5.0.0-rc.2", "@neo9/n9-node-log@^5.0.0-rc.5":
+"@neo9/n9-node-log@^5.0.0-rc.2", "@neo9/n9-node-log@^5.0.0-rc.6":
   version "5.0.0-rc.6"
   resolved "https://registry.npmjs.org/@neo9/n9-node-log/-/n9-node-log-5.0.0-rc.6.tgz#bcce306ce7d936a7efe211defd1b687c34d27286"
   integrity sha512-+QiIIO522Ov8V3/W2FMcycxaaBO6wVqYwaxmtwwGllpmruPgesgS+XBdENo9Ds47cVbZctovytZ35arLe/A2Og==
@@ -542,11 +542,6 @@
     chalk "^4.1.2"
     fast-iso-string "^1.0.0"
     fast-safe-stringify "^2.1.1"
-
-"@neo9/n9-node-utils@^2.2.1":
-  version "2.2.1"
-  resolved "https://registry.npmjs.org/@neo9/n9-node-utils/-/n9-node-utils-2.2.1.tgz#1f79db395ee2515377dec5c6bb48dd8f9c6b826c"
-  integrity sha512-A3gJgr+dfXkZVgs1CyMzeXJ2IK22YAAZy5nQNrTGSqLW5zRcInaOt1l0zfKrsMoKFbbQWkKsV/copSERXZBgTg==
 
 "@neo9/n9-node-utils@^3.0.0-rc.0":
   version "3.0.0-rc.0"
@@ -796,9 +791,9 @@
   integrity sha512-ZYFzrvyWUNhaPomn80dsMNgMeXxNWZBdkuG/hWlUvXvbdUH8ZERNBGXnU87McuGcWDsyzX2aChCv/SVN348k3A==
 
 "@types/node@*":
-  version "20.8.5"
-  resolved "https://registry.npmjs.org/@types/node/-/node-20.8.5.tgz#13352ae1f80032171616910e8aba2e3e52e57d96"
-  integrity sha512-SPlobFgbidfIeOYlzXiEjSYeIJiOCthv+9tSQVpvk4PAdIIc+2SmjNVzWXk9t0Y7dl73Zdf+OgXKHX9XtkqUpw==
+  version "20.8.6"
+  resolved "https://registry.npmjs.org/@types/node/-/node-20.8.6.tgz#0dbd4ebcc82ad0128df05d0e6f57e05359ee47fa"
+  integrity sha512-eWO4K2Ji70QzKUqRy6oyJWUeB7+g2cRagT3T/nxYibYcT4y2BDL8lqolRXjTHmkZCdJfIPaY73KbJAZmcryxTQ==
   dependencies:
     undici-types "~5.25.1"
 
@@ -4262,10 +4257,10 @@ min-indent@^1.0.0:
   resolved "https://registry.npmjs.org/min-indent/-/min-indent-1.0.1.tgz#a63f681673b30571fbe8bc25686ae746eefa9869"
   integrity sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg==
 
-mingo-fork-no-hash@^3.1.1:
-  version "3.1.1"
-  resolved "https://registry.npmjs.org/mingo-fork-no-hash/-/mingo-fork-no-hash-3.1.1.tgz#5ccc895dd5348840305ed62b58d1c1861e8f87f9"
-  integrity sha512-v0n/xNC+UsKknMUb9TvOCExiHJpraNFcmHxA/RFFSvoidCx5cibLqt+y53zM3vh9597xmMaNeXskn+vJ0+9NAg==
+mingo@^6.4.7:
+  version "6.4.7"
+  resolved "https://registry.npmjs.org/mingo/-/mingo-6.4.7.tgz#8e9af4d788e67ffaa59b53bbc4ad027f87be24da"
+  integrity sha512-9CxaYNHl64KG/IPhIpTzNHajHB7HMj51bKy51Gdi3QzLOEbpK2mWzvs0U/3GCysytBycrkTjbNSP6GZ0rgh0hg==
 
 minimatch@^3.0.4, minimatch@^3.0.5, minimatch@^3.1.1, minimatch@^3.1.2:
   version "3.1.2"
