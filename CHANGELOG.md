@@ -1,5 +1,12 @@
 
 
+# [1.0.0-rc.2](https://github.com/neo9/n9-mongodb-migration/compare/1.0.0-rc.1...1.0.0-rc.2) (2023-10-16)
+
+
+### yarn
+
+* Upgrade n9-mongo-client ([b424a65](https://github.com/neo9/n9-mongodb-migration/commit/b424a6590133eac641bf5f5c7a5ad83023dfe8fe))
+
 # [1.0.0-rc.1](https://github.com/neo9/n9-mongodb-migration/compare/1.0.0-rc.0...1.0.0-rc.1) (2023-10-13)
 
 
