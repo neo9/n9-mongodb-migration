@@ -1,5 +1,12 @@
 
 
+# [1.0.0-rc.3](https://github.com/neo9/n9-mongodb-migration/compare/1.0.0-rc.2...1.0.0-rc.3) (2023-10-17)
+
+
+### settings
+
+* Rollback logger setting back to optional ([9cbd842](https://github.com/neo9/n9-mongodb-migration/commit/9cbd842a2cb2008ab9269f0f4174541a4b402b85))
+
 # [1.0.0-rc.2](https://github.com/neo9/n9-mongodb-migration/compare/1.0.0-rc.1...1.0.0-rc.2) (2023-10-16)
 
 
