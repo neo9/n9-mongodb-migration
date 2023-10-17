@@ -12,7 +12,7 @@ import { Migrator } from './migrator';
 
 interface N9MongodbMigrationSettings {
 	migrationScriptsFolderPath: string;
-	logger: N9Log;
+	logger?: N9Log;
 	mongodbURI?: string;
 	mongodbOptions?: MongoClientOptions;
 	appRootDirPath?: string;
@@ -35,7 +35,13 @@ export class N9MongodbMigration {
 		this.scriptsFolderBasePath = path.normalize(settings.migrationScriptsFolderPath);
 		this.appInfos = this.getToAppInfo(settings.appRootDirPath ?? appRootDir.get());
 
-		this.logger = settings.logger.module('n9-mongodb-migration');
+		this.logger = (
+			settings.logger ??
+			new N9Log(this.appInfos.name, {
+				formatJSON:
+					process.env.NODE_ENV === 'development' ? /* istanbul ignore next */ false : undefined,
+			})
+		).module('n9-mongodb-migration');
 
 		this.mongodb = {
 			uri: settings.mongodbURI ?? process.env.MONGODB_URI,

@@ -40,3 +40,13 @@ ava('Missing params', async (t: ExecutionContext<TestContext>) => {
 
 	await t.notThrowsAsync(async () => await m.apply());
 });
+
+ava('Check optional logger', async (t: ExecutionContext<TestContext>) => {
+	const m = new N9MongodbMigration({
+		migrationScriptsFolderPath: join(__dirname, './fixtures/from-empty-db'),
+		mongodbURI: t.context.mongodbURI,
+		appRootDirPath: join(__dirname, './fixtures/from-empty-db'),
+	});
+
+	await t.notThrowsAsync(async () => await m.apply());
+});
