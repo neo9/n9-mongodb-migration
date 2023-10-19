@@ -1,5 +1,12 @@
 
 
+# [1.0.0-rc.4](https://github.com/neo9/n9-mongodb-migration/compare/1.0.0-rc.3...1.0.0-rc.4) (2023-10-19)
+
+
+### yarn
+
+* Upgrade n9-node-log to version 5.0.0-rc.7 ([08b5bfe](https://github.com/neo9/n9-mongodb-migration/commit/08b5bfe9529432c166414f9b5e8367f6eecf1af9))
+
 # [1.0.0-rc.3](https://github.com/neo9/n9-mongodb-migration/compare/1.0.0-rc.2...1.0.0-rc.3) (2023-10-17)
 
 
