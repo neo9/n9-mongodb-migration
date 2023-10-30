@@ -1,5 +1,12 @@
 
 
+# [1.0.0-rc.5](https://github.com/neo9/n9-mongodb-migration/compare/1.0.0-rc.4...1.0.0-rc.5) (2023-10-30)
+
+
+### yarn
+
+* Upgrade n9-mongodb-client and transitive dependencies and drop node 16 supports ([114db5f](https://github.com/neo9/n9-mongodb-migration/commit/114db5f2b5826ed6c15855689ee6398898f873e5))
+
 # [1.0.0-rc.4](https://github.com/neo9/n9-mongodb-migration/compare/1.0.0-rc.3...1.0.0-rc.4) (2023-10-19)
 
 
