@@ -4,7 +4,7 @@ import * as path from 'node:path';
 import { MongoUtils } from '@neo9/n9-mongodb-client';
 import { N9Log } from '@neo9/n9-node-log';
 import { N9Error } from '@neo9/n9-node-utils';
-import * as appRootDir from 'app-root-dir';
+import * as AppRootDir from 'app-root-dir';
 import type { MongoClientOptions } from 'mongodb';
 
 import { AppInfosRepository } from './app-infos.repository';
@@ -33,7 +33,7 @@ export class N9MongodbMigration {
 			throw new N9Error('missing-migration-script-folder-path', 400);
 		}
 		this.scriptsFolderBasePath = path.normalize(settings.migrationScriptsFolderPath);
-		this.appInfos = this.getToAppInfo(settings.appRootDirPath ?? appRootDir.get());
+		this.appInfos = this.getToAppInfo(settings.appRootDirPath ?? AppRootDir.get());
 
 		this.logger = (
 			settings.logger ??
