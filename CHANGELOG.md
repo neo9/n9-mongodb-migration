@@ -1,5 +1,12 @@
 
 
+# [1.0.0-rc.6](https://github.com/neo9/n9-mongodb-migration/compare/1.0.0-rc.5...1.0.0-rc.6) (2023-11-08)
+
+
+### yarn
+
+* Upgrade dependencies ([0848ad9](https://github.com/neo9/n9-mongodb-migration/commit/0848ad9761c6808d20525d67e16dd89411479dd9))
+
 # [1.0.0-rc.5](https://github.com/neo9/n9-mongodb-migration/compare/1.0.0-rc.4...1.0.0-rc.5) (2023-10-30)
 
 
